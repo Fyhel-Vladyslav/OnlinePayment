@@ -1,0 +1,32 @@
+﻿.Name {
+    color: #121;
+    margin: 50px 10px;
+}
+
+.line_product {
+    font-size: 25px;
+    margin: 30px;
+    min-height: 50px;
+    justify-content: flex-start;
+}
+
+.bigButton {
+    width: 250px;
+    height: auto;
+    font-size: 35px;
+    font-weight: 700;
+    border-radius: 50px;
+    opacity: 3;
+}
+
+#order {
+    background-color: #3AA32F;
+    font-family: inherit;
+    color: aliceblue;
+    text-align: center;
+    border-color: #3AA32F;
+    border-style: hidden;
+    float: right;
+    padding: 20px 10px;
+    margin: 40px;
+}

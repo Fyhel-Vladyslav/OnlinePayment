@@ -1,0 +1,23 @@
+﻿@using OnlineShop.Data.Models;
+@model IEnumerable<Category>
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home";
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/css/cart.css" />
+
+<div>
+    <h1 class="Name" style="margin-top: 0px;">Ваша корзина</h1>
+    <div class="line_product" id="products">Ваша корзина пуста</div>
+    <hr>
+    <h1 class="Name">Вибрані товари</h1>
+    <div class="line_product" id="favourites">Ви нічого не вибрали</div>
+    <hr>
+    <button class="bigButton" id="order">Оформити замовлення</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/slick.min.js"></script>
+<script src="~/js/OnlineShop.js"></script>

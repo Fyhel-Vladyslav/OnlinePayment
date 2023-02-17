@@ -1,0 +1,193 @@
+﻿@using OnlineShop.Data.Models;
+@model IEnumerable<Category>
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home";
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/css/categories.css" />
+
+
+<div class="wrapper">
+    <div class="container row">
+        <div class="sidebar1">
+            <div class="inner-sidebar1">
+                Side bar
+                <div class="side-menu">
+                    <div class="side-menu-name">name</div>
+                    <ul class="side-menu-content">
+                        <li><a href="#">Головна</a></li>
+                        <li><a href="#"><span>Контакти</span></a></li>
+                        <li><a href="#"><span>Про сайт</span></a>
+                        <li><a href="#"><span>Істория</span></a></li>
+                        <li><a href="#"><span>Колектив</span></a></li>
+                        <li><a href="#"><span>Карта</span></a></li>
+                        <li><a href="#"><span>Посилання</span></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="inner-content">
+                <ul class="products clearfix">
+                    @{ foreach (var item in Model)
+                        {
+                            <li class="product-wrapper">
+                                <a href="/Items/IndexItems/@item.id" class="product">
+                                    <div class="category_item">
+                                        <div class="category_img">
+                                            <img src="@item.img" alt="">
+                                        </div>
+                                        <div class="category_name"><b>@item.categoryName</b></div>
+                                    </div>
+                                </a>
+                            </li>
+                        }
+                    }
+
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar2">
+            <div class="inner-sidebar2">
+                <div class="section_title">
+                    <div class="section_suptitle">
+                        cart
+                        <div class="section_text">
+                            There you can add or delete goods to list
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar2-info">
+                    <div class="sidebar2-info-prev"></div>
+                    <img href="" src="~/images/index/cart_sidebar2.jpg">
+                    <div class="sidebar2-info-end"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full_slider">
+
+        <div class="slider_hover">
+            <div class="slider_name">наші найкращі товари </div>
+            <!-- Slideshow container -->
+
+            <div class="slider">
+                <div class="slider_item">
+                    <img src="~/images/boiler.jpg" alt="">
+                </div>
+                <div class="slider_item">
+                    <img src="~/images/santeh.jpg" alt="">
+                </div>
+                <div class="slider_item">
+                    <img src="~/images/instrym.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- End of slideshow container -->
+        </div>
+    </div>
+    <div class="statistics">
+        <container>
+            <div class="stat">
+                <div class="stat_item">
+                    <div class="stat_count">1</div>
+                    <div class="stat_text">Web-designer</div>
+                </div>
+                <div class="stat_item">
+                    <div class="stat_count">32</div>
+                    <div class="stat_text">Projects</div>
+                </div>
+                <div class="stat_item">
+                    <div class="stat_count">168</div>
+                    <div class="stat_text">Days of coding</div>
+                </div>
+                <div class="stat_item">
+                    <div class="stat_count">20</div>
+                    <div class="stat_text">Friends</div>
+                </div>
+                <div class="stat_item">
+                    <div class="stat_count">1</div>
+                    <div class="stat_text">Customer</div>
+                </div>
+            </div>
+        </container>
+    </div>
+    <div class="statistic_end"></div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="section_header">
+            <h3 class="section_suptitle">ми пропонуємо</h3>
+            <h2 class="section_title">додаткові послуги</h2>
+        </div>
+
+        <div class="services row">
+            <div class="services_item_left">
+                <div class="services_item">
+                    <img class="services_icon" src="~/images/services/home.png">
+                    <div class="services_title"><b>Наш офіс:</b></div>
+                    <div class="services_text">Вулиця Соборна 143.<br> 3 поверх.<br> Кабінет - 304.</div>
+                </div>
+            </div>
+            <div class="services_item">
+                <img class="services_icon" src="~/images/services/sklad.png">
+                <div class="services_title"><b>Наші склади:</b></div>
+                <div class="services_text">Вулиця Біла 30/а.<br>  Склад №2.</div>
+            </div>
+
+
+
+
+            <div class="services_item">
+                <img class="services_icon" src="~/images/services/grafik.png">
+                <div class="services_title"><b>Доставка:</b></div>
+                <div class="services_text">Приблизний час <br>доставки - <b>1 день</b>.</div>
+            </div>
+
+            <div class="services_item">
+                <img class="services_icon" src="~/images/services/spusok.png">
+                <div class="services_title"><b>список замовлень:</b></div>
+                <div class="services_text">Вже оформлено і завершено:<br> <b>152 замовлення</b>.</div>
+            </div>
+        </div>
+        <br><hr>
+
+        <div class="secion section_gray">
+            <div class="container">
+
+                <div class="review">
+                    <div class="review_item">
+                        <img class="review_photo" src="~/images/coment.png" alt="">
+                        <div class="review_text">топ дизайн.</div>
+                        <div class="review_author">Johan</div>
+                    </div>
+                    <div class="review_item">
+                        <img class="review_photo" src="~/images/coment.png" alt="">
+                        <div class="review_text">{хороший постачальник}.</div>
+                        <div class="review_author">Marin</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/slick.min.js"></script>
+<script src="~/js/OnlineShop.js"></script>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OnlineShop</title>
+    <link rel="stylesheet" type="text/css" href="~/css/main.css" />
+
+</head>
+
+<body>
+    <div class="inner-header">
+        <div style="width: 190px;float: right;">
+            <div class="svgButtons">
+                <a href="#url" class="divButton"><div target="_blank"><h4 style="float: left;margin: 5px; 0px;">Ввійти</h4><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svgButton"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div></a>
+                <a a href="/Cart/IndexCart" class="divButton"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="svgButton" target="_blank" viewBox="0 0 16 16"> <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" /> </svg></a>
+            </div>
+        </div>
+        <div class="section">
+
+            <div class="logo">					<img src="~/images/logo.svg" alt=""></div>
+            <div class="section_header">
+                <ul class="header-menu">
+                    <li class="active"><a href="#url">Головна</a></li>
+                    <li class="menu-children">
+                        <a href="#url">Послуги</a>
+                        <ul>
+                            <li><a href="#url">Реклама</a></li>
+                            <li><a href="#url">Покупка</a></li>
+                            <li class="menu-children">
+                                <a href="#url">Підрозділи</a>
+                                <ul>
+                                    <li><a href="#url">Підрозділ 1</a></li>
+                                    <li><a href="#url">Підрозділ 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#url">Новини</a></li>
+                    <li><a href="#url">Фотогалерея</a></li>
+                    <li><a href="#url">Контакти</a></li>
+                </ul>
+
+                <div class="search-inner">
+                    <form class="example" action="">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search">Пошук</i></button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+
+    <div class="footer">
+        <div class="inner-footer">Footer</div>
+    </div>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

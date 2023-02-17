@@ -1,0 +1,89 @@
+﻿@using OnlineShop.Data.Models;
+@model IEnumerable<Items>
+    @{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Items";
+    }
+    <link rel="stylesheet" type="text/css" href="~/css/items.css" />
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    сюди прилітає id категорії і тоді з бд дістається ітеми по категорії
+*@
+
+
+<div class="wrapper">
+    <div class="container row">
+        <div class="sidebar">
+            <div class="inner-sidebar">
+                <div class="side-menu">
+                    <div class="side-menu-name">name</div>
+                    <ul class="side-menu-content">
+                        <li><a href="#">Головна</a></li>
+                        <li><a href="#"><span>Контакти</span></a></li>
+                        <li><a href="#"><span>Про сайт</span></a>
+                        <li><a href="#"><span>Істория</span></a></li>
+                        <li><a href="#"><span>Колектив</span></a></li>
+                        <li><a href="#"><span>Карта</span></a></li>
+                        <li><a href="#"><span>Посилання</span></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="inner-content">
+                <ul class="products clearfix">
+                    @{ foreach (var item in Model)
+                        {
+                                        <li class="item-wrapper">
+                                            <a href="/SimpleItem/IndexSItem/@item.id" class="item">
+                                                <div class="inner-item">
+                                                    <div class="item_img">
+                                                        <img src="~/images/boiler.jpg" alt="">
+                                                    </div>
+                                                    <div class="item_info">
+                                                        <div class="item_name"><b>@item.name</b>	</div>
+
+                                                        <div class="short_desk">
+                                                            <b>@item.shortDesc</b>
+                                                        </div>
+                                                        <div class="price_info">
+                                                            <div class="stars">
+                                                                <div class="rate_background">
+                                                                    ★★★★★
+                                                                    <div class="rate_bar">
+                                                                    @{ 
+                                                                        for (int i = 0; i < (@item.rating); i++) {<div class="simple_star">★</div> }
+                                                                    }</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cost_word">ціна :</div>
+                                                            <div class="cost">@item.price</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item_buttons">
+
+                                                        <button class="buy-btn btn">
+                                                            <b>Купити</b>
+                                                        </button>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox_input_heart">
+                                                            <span class="check_box_heart"></span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" class="checkbox_input_cart">
+                                                            <span class="check_box_cart"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                        }
+                    }
+                    
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

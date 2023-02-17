@@ -1,0 +1,25 @@
+﻿@using OnlineShop.Data.Models;
+@model IEnumerable<Category>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <h2>All Categories</h2>
+    @{ foreach (var item in Model)
+        {
+            <div>
+                <h2>@item.id: @item.categoryName</h2>
+
+            </div>
+        }
+    }
+</body>
+</html>

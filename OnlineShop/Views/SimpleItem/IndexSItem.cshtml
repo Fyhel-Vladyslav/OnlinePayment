@@ -1,0 +1,103 @@
+﻿@using OnlineShop.Data.Models;
+@model Items
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home";
+}
+
+<!docktype html>
+    <html>
+    <head>
+        <meta name="viewport" />
+        <link rel="stylesheet" type="text/css" href="~/css/simpleItem.css" />
+        <title>My site</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="greating_line">
+                <div class="item_image">
+                    <img src="~/images/boiler.jpg" alt="">
+                </div>
+                <div class="item_sInfo">
+                    <div class="title item_name">Велика назва предметa</div>
+                    <div class="title deskription">Короткий опис</div>
+
+                    <div class="icon_info">
+                        <div class="stars">
+                            <div class="rate_background">
+                                ★★★★★
+                                <div class="rate_bar">★★★</div>
+                            </div>
+                        </div>
+                        <div class="isAvailable">Є в наявності</div>
+
+
+                        <div class="price">1234.56 грн</div>
+                        <div style="">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox_input_heart">
+                                <span class="check_box_heart"></span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox_input_cart">
+                                <span class="check_box_cart"></span>
+                            </label>
+                        </div>
+
+                        <button class="buy-btn btn">
+                            <b>Купити</b>
+                        </button>
+                    </div>
+                    <div class="pay_info">
+                        <h3>Опис</h3>@Model.longDesc
+                    </div>
+                    <div class="pay_info">
+                        <h3>Гарантія</h3>
+                        Готівкою, по безготівковому розрахунку для юр. осіб з ПДВ, терміналами
+                        ПриватБанку, в кредит/розстрочку, за допомогою платіжних
+                        систем Visa/Mastercard, Privat24, Liqpay, Portmone та іншими.
+                        Обмін/повернення товару належної якості протягом 14 днів. Детальніше
+                        Офіційна гарантія виробника: 12 міс. Детальніше
+                    </div>
+                </div>
+            </div>
+            <div class="title item_fInfo">
+                Характеристики {велика назва предмету}
+            </div>
+
+
+            
+
+
+            <div class="full_info">
+                <div class="fInfo_line gray_line">
+                    <div>Тип</div>
+                    <div>полароїд</div>
+                </div>
+                <div class="fInfo_line">
+                    <div>Гарантія\міс.</div>
+                    <div>12</div>
+                </div>
+                <div class="fInfo_line gray_line">
+                    <div>Країна-виробник</div>
+                    <div>Китай</div>
+                </div>
+            </div>
+
+            <div class="review title">Відгуки та питання  </div>
+            <div class="review">
+                <div class="review_item">
+                    <img class="review_photo" src="/images/coment.png" alt="">
+                    <div class="review_text">топ дизайн.</div>
+                    <div class="review_author">Johan</div>
+                </div>
+                <div class="review_item">
+                    <img class="review_photo" src="/images/coment.png" alt="">
+                    <div class="review_text">{хороший постачальник}.</div>
+                    <div class="review_author">Marin</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
