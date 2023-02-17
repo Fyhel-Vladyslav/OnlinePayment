@@ -22,11 +22,6 @@ namespace OnlineShop.Controlers
             _allCategories = iItemsCategory;
         }
 
-        public ViewResult List()
-        { 
-            var categories = _allCategories.AllCategories;
-            return View(categories);
-        }
 
         public ViewResult IndexCart()
         {

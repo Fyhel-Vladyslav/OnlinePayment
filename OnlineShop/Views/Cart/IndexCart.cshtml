@@ -5,19 +5,86 @@
     ViewData["Title"] = "Home";
 }
 
-
 <link rel="stylesheet" type="text/css" href="~/css/cart.css" />
 
-<div>
-    <h1 class="Name" style="margin-top: 0px;">Ваша корзина</h1>
-    <div class="line_product" id="products">Ваша корзина пуста</div>
-    <hr>
-    <h1 class="Name">Вибрані товари</h1>
-    <div class="line_product" id="favourites">Ви нічого не вибрали</div>
-    <hr>
-    <button class="bigButton" id="order">Оформити замовлення</button>
-</div>
+    <div class="wrapper">
+        <div id="cart_list">
+            <ul class="item-wrapper">
+                <li class="empty_cart">Ваша корзина пуста</li>
+                <!---->
+                <li class="item">
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="~/js/slick.min.js"></script>
-<script src="~/js/OnlineShop.js"></script>
+                    <div class="inner-item">
+                        <div class="item_img">
+                            <img src="/images/instrym.jpg" alt="">
+                        </div>
+
+                        <div class="long_desk">
+                            іСантехніка
+                            це просто сантехніка, нічого більше...
+                        </div>
+
+                        <div class="price_place">
+                            <div id="counter">
+                                <input id="plus" type="button" value="+" onclick="plus()">
+                                <input id="minus" type="button" value="-" onclick="minus()">
+                                <input type="text" value="1" maxlength="3" id="amount" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,3}$/.test(this.value));">
+
+                            </div>
+                            <b id="price">9421.22</b>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="inner-item">
+
+                        <div class="item_img">
+                            <img src="/images/instrym.jpg" alt="">
+                        </div>
+
+                        <div class="long_desk">
+                            іСантехніка
+                            це просто сантехніка, нічого більше...
+                        </div>
+
+                        <div class="price_place">
+                            <div id="counter">
+
+                                <input id="plus" type="button" value="+" onclick="plus()">
+
+                                <input id="minus" type="button" value="-" onclick="minus()">
+                                <input type="text" value="1" maxlength="3" id="amount" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 && /^\d{0,3}$/.test(this.value));">
+
+                            </div>
+                            <b id="price">9421.22</b>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="item">a</li>
+                <li class="item">a</li>
+                <li class="item">a</li>
+                <li class="item">a</li>
+                <li class="item">a</li>
+                <li class="item">a</li>
+                <!---->
+            </ul>
+        </div>
+
+        <footer>
+            <div class="footer_content">
+                <div class="sum_place">
+                    <div class="sum_text">
+                        <h1 style="float: left; padding: 30px">До сплати:</h1>
+                        <h1 id="sum_price">12231.22</h1>
+                    </div>
+                </div>
+                <button class="buy-btn btn">
+                    <b>Оформити замовлення</b>
+                </button>
+
+            </div>
+        </footer>
+    </div>
+
+<script src="~/js/cart.js"></script>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\visualstudio\\C# projects\\сайти\\OnlineShop\\OnlineShop.csproj": {}
+    "D:\\vodnik\\2 курс\\курсова\\GitHub\\OnlinePayment\\OnlineShop\\OnlineShop.csproj": {}
   },
   "projects": {
-    "D:\\visualstudio\\C# projects\\сайти\\OnlineShop\\OnlineShop.csproj": {
+    "D:\\vodnik\\2 курс\\курсова\\GitHub\\OnlinePayment\\OnlineShop\\OnlineShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visualstudio\\C# projects\\сайти\\OnlineShop\\OnlineShop.csproj",
+        "projectUniqueName": "D:\\vodnik\\2 курс\\курсова\\GitHub\\OnlinePayment\\OnlineShop\\OnlineShop.csproj",
         "projectName": "OnlineShop",
-        "projectPath": "D:\\visualstudio\\C# projects\\сайти\\OnlineShop\\OnlineShop.csproj",
+        "projectPath": "D:\\vodnik\\2 курс\\курсова\\GitHub\\OnlinePayment\\OnlineShop\\OnlineShop.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\visualstudio\\C# projects\\сайти\\OnlineShop\\obj\\",
+        "outputPath": "D:\\vodnik\\2 курс\\курсова\\GitHub\\OnlinePayment\\OnlineShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

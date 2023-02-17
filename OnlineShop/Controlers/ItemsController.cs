@@ -17,12 +17,10 @@ namespace OnlineShop.Controlers
     {      
       
         private readonly IAllItems _allItems;
-        private readonly IItemsCategory _allCategories;
 
-        public ItemsController(IAllItems iAllItems, IItemsCategory iItemsCategory)
+        public ItemsController(IAllItems iAllItems)
         {
             _allItems = iAllItems;
-            _allCategories = iItemsCategory;
 
         }
         public ViewResult List()
