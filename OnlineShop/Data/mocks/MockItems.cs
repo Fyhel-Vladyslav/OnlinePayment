@@ -19,14 +19,13 @@ namespace OnlineShop.Data.mocks
 
 
         private readonly IItemsCategory _categoryItems = new MockCategory();
-        private List<Items> allItems;
         private readonly IConfiguration config;
 
         public IEnumerable<Items> Items
         {
             get
             {
-                    return GetItemsFromDB();
+                    return GetCategoryItemsFromDB();
                 //return new List<Items>//test
                 //{
                     //new Items
@@ -58,7 +57,7 @@ namespace OnlineShop.Data.mocks
         }
         public IEnumerable<Items> getCategoryItems(int categoryId)
         { 
-                return GetItemsFromDB(categoryId); 
+                return GetCategoryItemsFromDB(categoryId); 
         }
         public SqlConnection Connection
         {
@@ -68,9 +67,9 @@ namespace OnlineShop.Data.mocks
             }
         }
 
-        IEnumerable<Items> IAllItems.getFavItems { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        IEnumerable<Items> IAllItems.getFavItems { get => throw new NotImplementedException(); }
 
-        private List<Items> GetItemsFromDB(int categoryId = 0)
+        private List<Items> GetCategoryItemsFromDB(int categoryId = 0)
         {
             using (SqlConnection connection = Connection)
             {
@@ -91,8 +90,6 @@ namespace OnlineShop.Data.mocks
                     }
 
                 connection.Close();
-
-                this.allItems = allItems;
                 return allItems;
             }
         }

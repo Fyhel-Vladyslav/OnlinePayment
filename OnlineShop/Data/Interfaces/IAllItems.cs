@@ -11,7 +11,7 @@ namespace OnlineShop.Data.Interfaces
 
         IEnumerable<Items> Items { get;}
 
-        IEnumerable<Items> getFavItems { get; set; }
+        IEnumerable<Items> getFavItems { get;}
 
         IEnumerable<Items> getCategoryItems(int categoryId);
 

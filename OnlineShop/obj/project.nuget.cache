@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "54Kt6NNEmmKUnETqNFUvUKgn3FBT84mrtRzlnH+fTH7Q+zEQ3n+57PlgPXa2T8LPLDInbaajHGg1GaXTJCDKfQ==",
+  "dgSpecHash": "mLjLqJaiRnGR6inzotvrbxseYBzyEPmTjjT6jtz1EXWz+X2JRoRjxZko78XqZ0L8yK743AF97dBK8zzj1ol8kQ==",
   "success": true,
   "projectFilePath": "D:\\vodnik\\2 курс\\курсова\\GitHub\\OnlinePayment\\OnlineShop\\OnlineShop.csproj",
   "expectedPackageFiles": [
@@ -138,8 +138,7 @@
     "C:\\Users\\User\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
