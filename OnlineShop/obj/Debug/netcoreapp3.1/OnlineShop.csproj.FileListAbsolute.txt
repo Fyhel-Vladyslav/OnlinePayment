@@ -331,3 +331,4 @@ D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\obj\Debug\ne
 D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\obj\Debug\netcoreapp3.1\OnlineShop.csproj.CopyComplete
 D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\obj\Debug\netcoreapp3.1\OnlineShop.csproj.AssemblyReference.cache
 D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\web.config
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

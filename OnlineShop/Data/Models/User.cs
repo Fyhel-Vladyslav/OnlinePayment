@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineShop.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,8 @@ namespace OnlineShop.Data.Models
 {
     public class User
     {
+        public User(string _Email, string _Password)
+        { }
         public User(int _id , string _Email, string _Password, string _AllCartID, string _FavouriteID)
         {
             List<string> tempListCart = new List<string>();
@@ -15,6 +18,7 @@ namespace OnlineShop.Data.Models
             int n = 0;
 
             id = _id;
+            UserName = _Email;
             Email = _Email;
             Password = _Password;
             foreach(var i in _AllCartID)
@@ -41,8 +45,11 @@ namespace OnlineShop.Data.Models
     public int id { set; get; }
 
         public string Email { set; get; }
+        public string UserName { set; get; }
 
         public string Password { set; get; }
+
+        public Role Role { get; set; }
 
         public IEnumerable<string> AllCartID { set; get; }
 
