@@ -1,25 +1,12 @@
-﻿@using OnlineShop.Data.Models;
-@model IEnumerable<Category>
-@{
-    Layout = null;
-}
+﻿@using OnlineShop.Data.ViewModels
+@model CartViewModel
+<div>
+    @foreach(var el in Model.cart.GetCartItems())
+            {
+                <div>
+                    <b>Item</b>@el.longDesc<br />
+                    <b>Price</b>@el.price.ToString("c")
+                </div>
+            }
+</div>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>List</title>
-</head>
-<body>
-    <h2>All Categories</h2>
-    @{ foreach (var item in Model)
-        {
-            <div>
-                <h2>@item.id: @item.categoryName</h2>
-
-            </div>
-        }
-    }
-</body>
-</html>

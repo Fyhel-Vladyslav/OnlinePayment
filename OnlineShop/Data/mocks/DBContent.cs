@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using OnlineShop.Data.Interfaces;
 using OnlineShop.Data.Models;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace OnlineShop.Data.mocks
 {
 
-    public class DBContent
+    public class DBContent:DbContext
     {
         private string table;
         private readonly IConfiguration config;
@@ -20,8 +21,6 @@ namespace OnlineShop.Data.mocks
         {
             config = _conf;
         }
-
-
 
         public Items getObjectItem(int itemId)
         {
@@ -107,6 +106,30 @@ namespace OnlineShop.Data.mocks
                 return allItems;
             }
         }
+
+        public List<CartItem> GetCartItemsFromDB()
+        {
+            table = "Cart";
+            using (SqlConnection connection = Connection)
+            {
+                List<CartItem> allItems = new List<CartItem>();
+                connection.Open();
+                allItems.Clear();
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;
+                    com.CommandText = $"select * from {table} WHERE categoryID = ";
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    allItems.Add(new CartItem((int)reader[0], (string)reader[1], (double)reader[2], (string)reader[3]));
+                }
+
+                connection.Close();
+
+                return allItems;
+            }
+        }
+
 
         public List<Category> GetCategoriesFromDB()
         {

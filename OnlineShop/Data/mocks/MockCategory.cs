@@ -11,9 +11,10 @@ namespace OnlineShop.Data.mocks
 {
     public class MockCategory : IItemsCategory
     {
+        List<Category> allCategories;
         public MockCategory(IConfiguration _conf)
         {
-            dbContent = new DBContent("Categories", _conf);
+            dbContent = new DBContent(_conf);
         }
         public MockCategory()
         {
@@ -25,7 +26,10 @@ namespace OnlineShop.Data.mocks
         {
             get
             {
-                    return dbContent.GetCategoriesFromDB();
+                if (allCategories != null)
+                    return allCategories;
+                return allCategories = new List<Category>(dbContent.GetCategoriesFromDB());
+                   
                 {
                     //return new List<Category>//test
                     //{ 
