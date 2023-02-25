@@ -11,7 +11,7 @@ namespace OnlineShop.Data.mocks
     {
         public MockItems(IConfiguration _conf)
         {
-            dbContent = new DBContent("Items", _conf);
+            dbContent = new DBContent( _conf);
         }
 
         private DBContent dbContent;

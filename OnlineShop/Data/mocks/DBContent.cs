@@ -16,10 +16,9 @@ namespace OnlineShop.Data.mocks
         private readonly IConfiguration config;
 
 
-        public DBContent(string _table, IConfiguration _conf)
+        public DBContent(IConfiguration _conf)
         {
             config = _conf;
-            table = _table;
         }
 
 
@@ -39,6 +38,7 @@ namespace OnlineShop.Data.mocks
 
         public Items GetSimpleItemFromDB(int Id = 0)
         {
+            table = "Items";
             using (SqlConnection connection = Connection)
             {
                 Items item = new Items();
@@ -57,6 +57,7 @@ namespace OnlineShop.Data.mocks
         }
         public List<Items> GetItemsFromDB(int categoryId = 0)
         {
+            table = "Items";
             using (SqlConnection connection = Connection)
             {
                 List<Items> allItems = new List<Items>();
@@ -82,6 +83,7 @@ namespace OnlineShop.Data.mocks
         }
         public List<Items> GetFavItems(int categoryId = 0)
         {
+            table = "Items";
             using (SqlConnection connection = Connection)
             {
                 List<Items> allItems = new List<Items>();
@@ -108,6 +110,7 @@ namespace OnlineShop.Data.mocks
 
         public List<Category> GetCategoriesFromDB()
         {
+            table = "Category";
             using (SqlConnection connection = Connection)
             {
                 List<Category> allCategories = new List<Category>();
