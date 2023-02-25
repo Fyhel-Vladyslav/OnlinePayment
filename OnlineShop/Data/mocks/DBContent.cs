@@ -10,23 +10,19 @@ using System.Threading.Tasks;
 namespace OnlineShop.Data.mocks
 {
 
-    public class DBContent : IAllItems
+    public class DBContent
     {
-
-        private List<Items> allItems;
+        private string table;
         private readonly IConfiguration config;
 
-        public DBContent(IConfiguration _conf)
+
+        public DBContent(string _table, IConfiguration _conf)
         {
             config = _conf;
+            table = _table;
         }
-        public IEnumerable<Items> Items => GetCategoryItemsFromDB();
-        public IEnumerable<Items> getFavItems => GetFavItems();
 
-        public IEnumerable<Items> getCategoryItems(int categoryId)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Items getObjectItem(int itemId)
         {
@@ -41,7 +37,7 @@ namespace OnlineShop.Data.mocks
             }
         }
 
-        private Items GetSimpleItemFromDB(int Id = 0)
+        public Items GetSimpleItemFromDB(int Id = 0)
         {
             using (SqlConnection connection = Connection)
             {
@@ -50,7 +46,7 @@ namespace OnlineShop.Data.mocks
                 SqlCommand com = new SqlCommand();
                 com.Connection = connection;
 
-                com.CommandText = $"select * from Items WHERE id = {Id}";
+                com.CommandText = $"select * from {table} WHERE id = {Id}";
                 SqlDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                     item = new Items((int)reader[0], (string)reader[1], (string)reader[2], (string)reader[3], "", (double)reader[5], Convert.ToBoolean((byte)reader[6]), ((int)reader[7]), Id, ((int)reader[9]));
@@ -59,7 +55,7 @@ namespace OnlineShop.Data.mocks
                 return item;
             }
         }
-        private List<Items> GetCategoryItemsFromDB(int categoryId = 0)
+        public List<Items> GetItemsFromDB(int categoryId = 0)
         {
             using (SqlConnection connection = Connection)
             {
@@ -70,9 +66,9 @@ namespace OnlineShop.Data.mocks
                 SqlCommand com = new SqlCommand();
                 com.Connection = connection;
                 if (categoryId != 0)
-                    com.CommandText = $"select * from Items WHERE categoryID = {categoryId}";
+                    com.CommandText = $"select * from {table} WHERE categoryID = {categoryId}";
                 else
-                    com.CommandText = "select * from Items";
+                    com.CommandText = $"select * from {table}";
                 SqlDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -81,11 +77,10 @@ namespace OnlineShop.Data.mocks
 
                 connection.Close();
 
-                this.allItems = allItems;
                 return allItems;
             }
         }
-        private List<Items> GetFavItems(int categoryId = 0)
+        public List<Items> GetFavItems(int categoryId = 0)
         {
             using (SqlConnection connection = Connection)
             {
@@ -96,9 +91,9 @@ namespace OnlineShop.Data.mocks
                 SqlCommand com = new SqlCommand();
                 com.Connection = connection;
                 if (categoryId != 0)
-                    com.CommandText = $"select * from Items WHERE categoryID = {categoryId}";
+                    com.CommandText = $"select * from {table} WHERE categoryID = {categoryId}";
                 else
-                    com.CommandText = "select * from Items";
+                    com.CommandText = $"select * from {table}";
                 SqlDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -107,8 +102,27 @@ namespace OnlineShop.Data.mocks
 
                 connection.Close();
 
-                this.allItems = allItems;
                 return allItems;
+            }
+        }
+
+        public List<Category> GetCategoriesFromDB()
+        {
+            using (SqlConnection connection = Connection)
+            {
+                List<Category> allCategories = new List<Category>();
+                connection.Open();
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;
+                com.CommandText = "select * from Categories";
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    allCategories.Add(new Category((int)reader[0], (string)reader[1], null, (string)reader[2]));
+                }
+                connection.Close();
+
+                return allCategories;
             }
         }
     }

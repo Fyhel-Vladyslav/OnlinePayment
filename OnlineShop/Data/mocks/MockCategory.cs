@@ -13,63 +13,30 @@ namespace OnlineShop.Data.mocks
     {
         public MockCategory(IConfiguration _conf)
         {
-            config = _conf;
+            dbContent = new DBContent("Categories", _conf);
         }
         public MockCategory()
         {
         }
 
-        private List<Category> allCategories;
-        private readonly IConfiguration config;
-
+        private DBContent dbContent;
 
         public IEnumerable<Category> AllCategories 
         {
             get
             {
-                if (allCategories != null)
-                    return allCategories;
-                else
-                    return GetCategoriesFromDB();
-
-
-                //return new List<Category>//test
-                //{ 
-                //    new Category{ categoryName = "Крани", desc = "Шарові запорні крани" },
-                //    new Category{ categoryName = "Труби", desc = "труби всіх видів для проведення водопроводу" },
-                //};
-
-            }
-
-        }
-
-        public SqlConnection Connection
-        {
-            get
-            {
-                return new SqlConnection(config.GetConnectionString("DefaultConnection"));
-            }
-        }
-
-        private List<Category> GetCategoriesFromDB()
-        {
-            using (SqlConnection connection = Connection)
-            {
-                List<Category> allCategories = new List<Category>();
-                connection.Open();
-                SqlCommand com = new SqlCommand();
-                com.Connection = connection;
-                com.CommandText = "select * from Categories";
-                SqlDataReader reader = com.ExecuteReader();
-                while (reader.Read())
+                    return dbContent.GetCategoriesFromDB();
                 {
-                    allCategories.Add(new Category((int)reader[0], (string)reader[1], null, (string)reader[2]));
+                    //return new List<Category>//test
+                    //{ 
+                    //    new Category{ categoryName = "Крани", desc = "Шарові запорні крани" },
+                    //    new Category{ categoryName = "Труби", desc = "труби всіх видів для проведення водопроводу" },
+                    //};
                 }
-                connection.Close();
-
-                this.allCategories = allCategories;
-                return allCategories;
             }
+
         }
+
+      
     }
 }
