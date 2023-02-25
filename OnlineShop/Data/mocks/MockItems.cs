@@ -11,9 +11,10 @@ namespace OnlineShop.Data.mocks
     {
         public MockItems(IConfiguration _conf)
         {
-            dbContent = new DBContent("Items", _conf);
+            dbContent = new DBContent(_conf);
         }
 
+        List<Items> allItems;
         private DBContent dbContent;
         private readonly IItemsCategory _categoryItems = new MockCategory();
 
@@ -53,8 +54,10 @@ namespace OnlineShop.Data.mocks
             return dbContent.GetSimpleItemFromDB(itemId);
         }
         public IEnumerable<Items> getCategoryItems(int categoryId)
-        { 
-                return dbContent.GetItemsFromDB(categoryId); 
+        {
+            if (allItems != null)
+                return allItems;
+            return allItems = new List<Items>(dbContent.GetItemsFromDB(categoryId));
         }
 
         IEnumerable<Items> IAllItems.getFavItems { get => throw new NotImplementedException(); }

@@ -331,3 +331,15 @@ D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\obj\Debug\ne
 D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\obj\Debug\netcoreapp3.1\OnlineShop.csproj.CopyComplete
 D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\obj\Debug\netcoreapp3.1\OnlineShop.csproj.AssemblyReference.cache
 D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\web.config
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\vodnik\2 курс\курсова\GitHub\OnlinePayment\OnlineShop\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll

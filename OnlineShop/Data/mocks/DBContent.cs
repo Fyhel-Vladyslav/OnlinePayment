@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using OnlineShop.Data.Interfaces;
 using OnlineShop.Data.Models;
@@ -10,19 +11,16 @@ using System.Threading.Tasks;
 namespace OnlineShop.Data.mocks
 {
 
-    public class DBContent
+    public class DBContent:DbContext
     {
         private string table;
         private readonly IConfiguration config;
 
 
-        public DBContent(string _table, IConfiguration _conf)
+        public DBContent(IConfiguration _conf)
         {
             config = _conf;
-            table = _table;
         }
-
-
 
         public Items getObjectItem(int itemId)
         {
@@ -39,6 +37,7 @@ namespace OnlineShop.Data.mocks
 
         public Items GetSimpleItemFromDB(int Id = 0)
         {
+            table = "Items";
             using (SqlConnection connection = Connection)
             {
                 Items item = new Items();
@@ -57,6 +56,7 @@ namespace OnlineShop.Data.mocks
         }
         public List<Items> GetItemsFromDB(int categoryId = 0)
         {
+            table = "Items";
             using (SqlConnection connection = Connection)
             {
                 List<Items> allItems = new List<Items>();
@@ -82,6 +82,7 @@ namespace OnlineShop.Data.mocks
         }
         public List<Items> GetFavItems(int categoryId = 0)
         {
+            table = "Items";
             using (SqlConnection connection = Connection)
             {
                 List<Items> allItems = new List<Items>();
@@ -106,8 +107,33 @@ namespace OnlineShop.Data.mocks
             }
         }
 
+        public List<CartItem> GetCartItemsFromDB()
+        {
+            table = "Cart";
+            using (SqlConnection connection = Connection)
+            {
+                List<CartItem> allItems = new List<CartItem>();
+                connection.Open();
+                allItems.Clear();
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;
+                    com.CommandText = $"select * from {table} WHERE categoryID = ";
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    allItems.Add(new CartItem((int)reader[0], (string)reader[1], (double)reader[2], (string)reader[3]));
+                }
+
+                connection.Close();
+
+                return allItems;
+            }
+        }
+
+
         public List<Category> GetCategoriesFromDB()
         {
+            table = "Category";
             using (SqlConnection connection = Connection)
             {
                 List<Category> allCategories = new List<Category>();

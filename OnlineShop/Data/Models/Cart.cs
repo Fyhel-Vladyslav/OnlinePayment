@@ -32,14 +32,16 @@ namespace OnlineShop.Data.Models
             return new Cart(context) { CartId = shopCartId };
         }
 
-        public void AddToCart(Items item, int amount)
+        public void AddToCart(Items item)
         {
             
         }
 
         public List<CartItem> GetCartItems()
         {
-            return null;
+            if (listItems!= null)
+                return listItems;
+            return dBContent.GetCartItemsFromDB().Where(c => c.CartId == CartId).ToList();
         }
     }
 }

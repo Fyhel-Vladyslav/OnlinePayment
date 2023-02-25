@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using OnlineShop.Data.Interfaces;
 using OnlineShop.Data.mocks;
+using OnlineShop.Data.Models;
 
 namespace OnlineShop
 {
@@ -31,7 +32,12 @@ namespace OnlineShop
             services.AddTransient<IItemsCategory, MockCategory>();
             services.AddRazorPages();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => Cart.GetCart(sp));
+
             services.AddControllers(options => options.EnableEndpointRouting = false);
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +63,7 @@ namespace OnlineShop
                 });
             }
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default","{controller=Categories}/{action=IndexCategories}/{id?}");
@@ -67,8 +74,7 @@ namespace OnlineShop
             });
 
 
-
-            app.UseHttpsRedirection();
+                app.UseHttpsRedirection();
      
 
             app.UseRouting();
